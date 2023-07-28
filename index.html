@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body class="bg-gray-200">
+    <header class="bg-blue-500 text-black text-center p-4"> ⛅ Weather Dashboard</header>
+    <div class="container mx-auto mt-8 p-4">
+        <div class="search-container flex items-center justify-center mb-4">
+            <input type="text" id="city-input" placeholder="Enter city name" class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring focus:border-blue-500">
+            <button id="search-btn" class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600">Search</button>
+        </div>
+
+        <div class="weather-info p-4 bg-white border border-gray-300 rounded-md shadow-md">
+            <!-- Weather results will be displayed here -->
+        </div>
+
+        <div class="search-history mt-4">
+            <h3 class="text-xl font-semibold mb-2 text-center">Search History</h3>
+            <ul id="search-history-list" class="list-disc pl-6 text-center">
+                <!-- Search history items will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
