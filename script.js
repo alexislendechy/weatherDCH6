@@ -2,7 +2,7 @@ const APIKey = "e80efecd42c82421d3b3d3726f179c2a";
 
 // Function to fetch weather data and update the UI
 function fetchWeather(city) {
-  const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
+  const queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
   fetch(queryURL)
     .then(response => response.json())
@@ -18,7 +18,7 @@ function fetchWeather(city) {
           <p id="temperature">Temperature: ${temperatureCelsius} °C</p>
           <p id="humidity">Humidity: ${data.main.humidity}%</p>
           <p id="wind-speed">Wind Speed: ${data.wind.speed} m/s</p>
-          <img id="weather-icon" src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon">
+          <img id="weather-icon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon">
         </div>
         <div class="forecast">
           <h3>Forecast for the next days</h3>
@@ -39,7 +39,7 @@ function fetchWeather(city) {
 
 // Function to fetch forecast data for the next 4 days
 function fetchForecast(city) {
-  const forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
+  const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
 
   fetch(forecastURL)
     .then(response => response.json())
@@ -55,7 +55,7 @@ function fetchForecast(city) {
         const humidity = `Humidity: ${forecastData.main.humidity}%`;
         const windSpeed = `Wind Speed: ${forecastData.wind.speed} m/s`;
         const iconCode = forecastData.weather[0].icon;
-        const iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
+        const iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
 
         const listItem = document.createElement("li");
         listItem.innerHTML = `
